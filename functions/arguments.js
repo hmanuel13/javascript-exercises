@@ -20,7 +20,8 @@ console.log(scoreText)
 // total, tipPercent .2 default
 
 let pay = function(bill, tipRate = .2){
-  return 'Your bill is $' + bill + ' and your tip is $' + (bill*tipRate).toFixed(2)
+  // return 'Your bill is $' + bill + ' and your tip is $' + (bill*tipRate).toFixed(2)
+  return `Your bill is \$${bill} and your tip is \$${(bill*tipRate).toFixed(2)}`
 }
 
 let payment = pay(67.75)
