@@ -13,3 +13,4 @@ let addExpense = function (account, amount){
 
 addExpense(myAccount,2.50)
 console.log(myAccount)
+
