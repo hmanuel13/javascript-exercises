@@ -21,7 +21,7 @@ let addIncome = function (account, amount){
 }
 
 let getAccountSummary = function (account){
-  console.log(`\nName: ${account.name} \nExpense: \$${account.expenses} \nIncome: \$${account.income}`)
+  console.log(`\nName: ${account.name} \nExpense: $${account.expenses} \nIncome: $${account.income}`)
 }
 
 let resetAccount = function (account){
