@@ -29,3 +29,4 @@ const todos = [
 for(i=0; i<todos.length; i++){
   console.log(todos[i])
 }
+

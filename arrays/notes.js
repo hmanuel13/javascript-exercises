@@ -19,3 +19,5 @@ console.log(notes)
 console.log('adding a new item by splicing')
 notes.splice(1,0,'spliced in note')
 console.log(notes)
+
+console.log(notes.indexOf('new note'))
