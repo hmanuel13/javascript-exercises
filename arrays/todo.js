@@ -22,6 +22,10 @@ const todos = [
 
 // format: 1. The first item
 
-todos.forEach(function(todo,index){
-  console.log(`${index +1}. ${todo}`)
-})
+// todos.forEach(function(todo,index){
+//   console.log(`${index +1}. ${todo}`)
+// })
+
+for(i=0; i<todos.length; i++){
+  console.log(todos[i])
+}
