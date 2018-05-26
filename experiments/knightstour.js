@@ -11,36 +11,55 @@
 // x 5 x x x 8 x x
 // x x 6 x 7 x x x
 
-let k = {x:2, y:5, z:1}
+let k = {x:2, y:5, z:2}
 
 // plot the position
 const board = []
 board.push(k)
+console.log(board[board.length - 1].y + 2)
+// board[board.length-1].y+=3
 console.log(`initial location is: (${board[0].x},${board[0].y})`)
 
-// get the next position
-let getNext = function(next){
-
-  switch(next.z){
-    case 1: next.x+=2; next.y+=1;
-    case 2: next.x+=1; next.y+=2
-    case 3: next.x-=1; next.y+=2
-    case 4: next.x-=2; next.y+=1
-    case 5: next.x-=2; next.y-=1
-    case 6: next.x-=1; next.y-=2
-    case 7: next.x+=1; next.y-=2
-    case 8: next.x+=2; next.y-=1
+// determines wether the given position is valid
+let isNotValidPos = function(v){
+  // position is out of bounds
+  if(v.x > 7 || v.x < 0 || v.y > 7 || v.y < 0 ) return true
+  // position is occupied
+  for(i=board[board.length-1]; i<board[board.length-1]; i++){
+    if(board[i].x == v.x && board[i].y == v.y) return true
   }
-  next.z++
+  return false
+}
 
-return next
+// get the next position
+let getNext = function(q){
+  
+  while(isNotValidPos(q))
+  {  
+    switch(q.z){
+      case 1: q.x+=2; q.y+=1
+      case 2: q.x+=1; q.y+=2
+      case 3: q.x-=1; q.y+=2
+      case 4: q.x-=2; q.y+=1
+      case 5: q.x-=2; q.y-=1
+      case 6: q.x-=1; q.y-=2
+      case 7: q.x+=1; q.y-=2
+      case 8: q.x+=2; q.y-=1
+      default: 
+      board.pop();
+      q = board[board.length-1]
+      q.z+=1
+    }
+  }
+
+return q
 }
 
 // populating the board
 while(board.length<64){
   k = getNext(board[board.length-1])
   board.push(k)
-  console.log(k)
+  console.log(board)
 }
 
 // sort board here
